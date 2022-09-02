@@ -1,95 +1,103 @@
 :root {
-    --BackgroundColor: rgb(69, 69, 69);
-    --ContainerColor: rgba(209, 37, 215, 0.757);
-    --TextColor: rgb(255, 255, 255);
-}
-
-* {
-    
+    --pink: magenta;
+    --dark: rgb(69,69,69);
+    --padding: 15px;
+    --radius: 10px;
 }
 
 body {
-    background-color: var(--BackgroundColor)
+    background: var(--dark);
+    color: white;
+    font-size: 20px;
+    line-height: 32px;
+    padding-left: var(--padding);
+    padding-right: var(--padding);
 }
 
-h1 {
-    font-size: 300%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 24px;
+header {
+    text-align: center;
+    margin: 0 0 20px;
 }
 
-h2 {
-    font-size: 200%;
-}
-
-h3 {
-    font-size: 150%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px;
-    padding: 20px;
-}
-
-h1, h2, h3, .card-body {
-    color: var(--ContainerColor);
+.page-title {
+    color: var(--pink);
+    font-size: 65px;
+    margin: 25px 0;
+    line-height: 65px;
 }
 
 header p {
-    color: var(--TextColor);
-    font-size: 115%;
+    margin: 0 auto 50px;
+    max-width: 1000px;
+}
+
+.row {
     display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 2%;
+}
+
+.justify-center {
     justify-content: center;
-    margin: 20px;
 }
 
 .card-column {
-    display: inline-flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    border: dashed var(--TextColor);
-    height: 300px;
-    width: 500px;
-    margin: 20px;
+    width: 31%;
+    margin-bottom: 65px;
 }
 
-.card-header {
-    background-color: var(--BackgroundColor);
+.card {
     display: flex;
-    flex-direction: row;
-    border: solid var(--TextColor);
-    border-radius: 10px;
+    flex-direction: column;
+    border: 2px dashed white;
+    padding: 20px;
     position: relative;
-    margin-top: -20px;
+    height: 100%;
 }
 
-.card-body {
-    margin: 10px;
-    font-size: 20px;
+.card h2, .card p {
+    color: var(--pink);
 }
 
-code {
-    display: inline;
+.card h2 {
+    background: var(--dark);
+    border: 2px solid white;
+    border-radius: var(--radius);
+    padding: var(--padding);
+    font-size: 36px;
+    position: absolute;
+    top: -34px;
+    /*width: 90%;*/
+}
+
+.card p {
+    margin-top: 25px;
 }
 
 .code-block {
-    color: var(--TextColor);
-    background: var(--ContainerColor);
-    border-radius: 10px;
-    display: flex;
-    height: 200px;
-    width: 400px;
+    flex: 1;
+    background: linear-gradient(var(--pink),rgb(147,0,147));
+    padding:var(--padding);
+    border-radius: var(--radius);
+    white-space: pre-wrap;
 }
 
-.code-card .card-header {
-    border-radius: 8px;
-    transition: all 0.5s ease-in-out;
-  }
-  
-.code-card:hover, .code-card:hover, .card-header {
-    box-shadow: inset 0px 0px 8px var(--ContainerColor), 0 0 15px var(--ContainerColor);
-  }
+@media (max-width: 1400px) {
+    .card-column {
+        width: 48%;
+    }
+}
 
-  
+@media (max-width: 930px) {
+    .card-column {
+        width: 98%;
+    }
+}
+
+
+
+
+
+
+
